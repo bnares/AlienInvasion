@@ -4,3 +4,4 @@ images/
 _pyacache_/
 probny/
 __pycache__/
+*.pyc
