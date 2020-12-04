@@ -2,3 +2,5 @@
 venv/
 images/
 _pyacache_/
+probny/
+__pycache__/
