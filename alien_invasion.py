@@ -62,6 +62,17 @@ class AlienInvasion():
             elif event.type == pygame.KEYUP:
                 self._key_up(event)
 
+
+    def _update_bullets(self):
+        #Update bullets positions
+        self.bullets.update()
+
+        #get rof of bullets that has dessepeard
+        for bullet in self.bullets.copy():
+            if(bullet.rect.bottom<0):
+                self.bullets.remove(bullet)
+
+
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
         self.ship.blitme()
@@ -80,10 +91,7 @@ class AlienInvasion():
             self.bullets.update()
 
             #Get rid of the bullets that have dissepeard
-            for bullet in self.bullets.copy():
-                if(bullet.rect.bottom<=0):
-                    self.bullets.remove(bullet)
-
+            self._update_bullets()
 
             self._update_screen()
 
