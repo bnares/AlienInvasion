@@ -72,10 +72,15 @@ class AlienInvasion():
         #Update bullets positions
         self.bullets.update()
 
-        #get rof of bullets that has dessepeard
+        #get rid of of bullets that has dessepeard
         for bullet in self.bullets.copy():
             if(bullet.rect.bottom<0):
                 self.bullets.remove(bullet)
+
+        #check for any bullets that have hit aliens
+        #if so get rid of the bullet and ship
+
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True )
 
 
     def _update_aliens(self):
