@@ -5,3 +5,4 @@ _pyacache_/
 probny/
 __pycache__/
 *.pyc
+*.[zc]
